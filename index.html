@@ -81,9 +81,9 @@
     }
     .offline-note { display: flex; align-items: center; gap: .55rem; color: var(--muted); font-size: .82rem; }
     .offline-dot { width: .6rem; height: .6rem; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px var(--teal-soft); }
-    .utility-actions { display: flex; gap: .5rem; }
+    .utility-actions { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: flex-end; }
     .button {
-      display: inline-flex; align-items: center; justify-content: center;
+      display: inline-flex; align-items: center; justify-content: center; gap: .28rem;
       min-height: 40px; border: 1px solid var(--line); border-radius: 10px; padding: .55rem .8rem;
       background: var(--white); font-weight: 750; text-decoration: none; cursor: pointer; transition: transform .16s ease, background .16s ease;
     }
@@ -108,7 +108,6 @@
     .panel { padding: clamp(1rem, 3.5vw, 2.5rem); }
     .panel[hidden] { display: none; }
     .panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
-    .panel-actions { display: flex; flex: 0 0 auto; align-items: center; gap: .6rem; flex-wrap: wrap; justify-content: flex-end; }
     .kicker { color: var(--teal); font-size: .75rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
     h2 { margin: .3rem 0 0; font-size: clamp(1.65rem, 4vw, 2.65rem); line-height: 1.08; letter-spacing: -.035em; }
     h3 { margin: 0 0 .7rem; font-size: 1.05rem; letter-spacing: -.012em; }
@@ -198,9 +197,7 @@
       .button .wide { display: none; }
       .panel { padding: 1rem; }
       .panel-head { display: block; }
-      .panel-actions { justify-content: flex-start; margin-top: .8rem; }
       .status-badge { display: inline-block; margin-top: .8rem; }
-      .panel-actions .status-badge { margin-top: 0; }
       .metrics { gap: .55rem; }
       .metric { padding: .8rem; }
       .route-item { grid-template-columns: 4.25rem 1fr; }
@@ -267,7 +264,8 @@
       <div class="offline-note"><span class="offline-dot" aria-hidden="true"></span><span>Self-contained and ready offline</span></div>
       <div class="utility-actions">
         <button class="button" id="todayBtn" type="button" title="Open the closest trip day">Trip day</button>
-        <button class="button primary" id="printBtn" type="button">Print <span class="wide">one-page summary</span></button>
+        <a class="button" href="queenstown-ski-trip-infographic.png" target="_blank" rel="noopener">Infographic</a>
+        <button class="button primary" id="printBtn" type="button"><span>Print</span><span class="wide">one-page summary</span></button>
       </div>
     </div>
 
@@ -289,10 +287,7 @@
       <section class="panel" id="overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
         <div class="panel-head">
           <div><span class="kicker">One-page daily summary</span><h2>The whole week, one clear plan</h2><p class="lede">Lessons start at The Remarkables, Day 2 adds Coronet Peak, and the final three ski days build confidence on familiar terrain.</p></div>
-          <div class="panel-actions">
-            <span class="status-badge">Bookings reconciled</span>
-            <a class="button primary print-hide" href="queenstown-ski-trip-infographic.png" target="_blank" rel="noopener">View infographic</a>
-          </div>
+          <span class="status-badge">Bookings reconciled</span>
         </div>
 
         <div class="metrics" aria-label="Trip totals">
